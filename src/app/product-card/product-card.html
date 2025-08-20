@@ -1,0 +1,30 @@
+
+  <div class="card-container">
+    <div class="product-card">
+      <div class="image-wrapper">
+        <span class="discount-badge">{{ product.category }}</span>
+        <img [src]="product.image" alt="Product Image" class="product-image" />
+      </div>
+      <div class="product-details">
+        <h2 class="product-title">{{ product.title }}</h2>
+
+        <p class="product-description"
+         [routerLink]="['/product_detail']"
+         [queryParams]="{product_id: product.id}"
+         
+         >
+        {{ product.description }}
+        </p>
+
+
+        <div class="product-price">{{ product.price | currency }}</div>
+        <!-- <div class="product-price">{{ product.price | khr }}</div> -->
+        <p class="card-text text-primary fw-bold">out: {{ product.price | tokhr:4100: 'floor'}}</p>
+        <p class="card-text text-primary fw-bold">in: {{ product.price| tokhr:4100:'in'}}</p>
+        <!-- <p class="card-text text-primary fw-bold">add: {{ product.price| addTen}}</p> -->
+        <button class="buy-button"
+        (click)="addTocart(product)"
+        >Add to Cart</button>
+      </div>
+    </div>
+  </div>

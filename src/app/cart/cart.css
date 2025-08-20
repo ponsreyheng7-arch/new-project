@@ -1,0 +1,167 @@
+/* ===== Cart Container ===== */
+.p-4.bg-white.rounded.shadow-sm {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.Continue_shop{
+  font-weight: bold;
+}
+
+/* ===== Product Image ===== */
+.cart-item-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+/* ===== Product Title & Category ===== */
+h6 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.text-muted {
+  font-size: 13px;
+}
+
+/* ===== Price & Subtotal ===== */
+.fw-semibold {
+  font-size: 15px;
+}
+
+/* ===== Quantity Buttons ===== */
+.btn-outline-danger,
+.btn-outline-success {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 1;
+  font-size: 14px;
+  text-align: center;
+}
+
+input.form-control-sm {
+  height: 28px;
+  font-size: 14px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+/* ===== Remove Button ===== */
+.remove-btn {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  text-decoration: underline;
+}
+
+/* ===== Cart Footer ===== */
+.total-bar {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-success {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 18px;
+}
+
+/* ===== Empty Cart ===== */
+.empty-cart {
+  text-align: center;
+  padding: 60px 20px;
+  color: #777;
+}
+
+.empty-cart i {
+  font-size: 48px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.empty-cart p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.empty-cart .btn-primary {
+  padding: 6px 16px;
+  font-size: 14px;
+}
+.btn-primary {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 6px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+@media (max-width: 480px) {
+  /* Stack cart items vertically */
+  .row.align-items-center {
+    flex-direction: column;
+    align-items: flex-start !important;
+    text-align: left;
+  }
+
+  .cart-item-image {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  .form-check-input {
+    margin-right: 8px;
+    transform: scale(1);
+  }
+
+  h6.mb-1 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+
+  .col-md-5,
+  .col-md-2,
+  .col-md-1 {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .col-md-2.d-flex {
+    justify-content: space-between;
+  }
+
+  .form-control-sm {
+    width: 50px;
+    font-size: 1rem;
+  }
+
+  .btn-sm {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .remove-btn {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 5px;
+    text-align: right;
+  }
+
+  .d-flex.justify-content-between.align-items-center.mt-4 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .btn-success {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+

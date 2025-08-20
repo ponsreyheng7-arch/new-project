@@ -1,0 +1,100 @@
+<div class="container py-5">
+  <div class="p-4 bg-white rounded shadow-sm">
+    
+    <!-- If cart is empty -->
+    <div
+      *ngIf="CartService.getCartItem().length === 0"
+      class="text-center py-5"
+    >
+      <p class="text-muted mb-3" style="font-size: 16px">Your cart is empty</p>
+      <i class="fa fa-shopping-cart fa-2x text-secondary d-block mb-3"></i>
+      <!-- <a [routerLink]="'/'" class="btn btn-warning px-4 Continue_shop">Continue Shopping</a> -->
+       <a [routerLink]="['/']" class="btn btn-warning px-4 Continue_shop">Continue Shopping</a>
+
+
+    </div>
+  
+    <!-- If cart has items -->
+    <div *ngIf="CartService.getCartItem().length > 0">
+      <h5 class="mb-4 fw-bold">Your Cart</h5>
+
+      @for (item of CartService.getCartItem(); track item.id) {
+      <div
+        class="row align-items-center border-bottom py-3 gx-3"
+        style="font-size: 14px"
+      >
+        <!-- Checkbox + Product Image & Details -->
+        <div class=" col-md-5 d-flex align-items-center ">
+          <input
+            type="checkbox"
+            [checked]="item.is_select"
+            (change)="CartService.selectCartItem(item)"
+            class="form-check-input me-3"
+          />
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+            class="cart-item-image rounded"
+          />
+          <div class="ms-3">
+            <h6 class="mb-1">{{ item.title }}</h6>
+            <small class="text-muted">{{ item.Category }}</small>
+          </div>
+        </div>
+
+        <!-- Unit Price -->
+        <div class="col-md-2 fw-semibold">{{ item.price | currency }}</div>
+
+        <!-- Quantity Controls -->
+        <div class="col-md-2 d-flex align-items-center">
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm"
+            (click)="CartService.decreaseQty(item)"
+          >
+            -
+          </button>
+          <input
+            type="text"
+            class="form-control form-control-sm text-center mx-2"
+            [value]="item.qty"
+            readonly
+            style="width: 50px"
+          />
+          <button
+            type="button"
+            class="btn btn-outline-success btn-sm"
+            (click)="CartService.increaseQty(item)"
+          >
+            +
+          </button>
+        </div>
+
+        <!-- Subtotal -->
+        <div class="col-md-2 fw-semibold">
+          {{ (item.price * item.qty) | currency }}
+        </div>
+
+        <!-- Remove -->
+        <div class="col-md-1 text-danger">
+          <span
+            class="remove-btn"
+            role="button"
+            (click)="CartService.removeCartItem(item)"
+          >
+            Remove
+          </span>
+        </div>
+      </div>
+      }
+
+      <!-- Cart Total & Checkout -->
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <h6 class="mb-0 fw-bold">
+          Total: {{ CartService.getCartTotal() | currency }}
+        </h6>
+        <button class="btn btn-success px-4" routerLink="/checkout-product">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar Sticky-top dynamic-navbar">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-uppercase" routerLink="/">ZANDO</a>
+
+    <!-- Toggler Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Nav Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Nav Links -->
+      <ul class="navbar-nav  ms-5 me-auto mb-2 mb-lg-0 text-center">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product-page">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Cart + Search -->
+      <form class="d-flex align-items-center cart-form" role="search">
+        <input
+          class="form-control me-2 search-box"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <a routerLink="/cart" class="btn btn-cart">
+          <i class="fa fa-shopping-cart me-2"></i>
+          Cart({{ CartService.getCartItem().length }})
+        </a>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet />
+
+<app-footer></app-footer>

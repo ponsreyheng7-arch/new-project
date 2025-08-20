@@ -1,0 +1,214 @@
+/* ======== Layout Container ======== */
+.page-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* ======== Cards Container ======== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* ======== Product Card ======== */
+.product-card {
+  max-width: 300px;
+  height: 100%; /* allow equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push button to bottom */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  flex: 1 1 calc(25% - 30px); /* 4 cards per row */
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ======== Image Section ======== */
+.image-wrapper {
+  width: 100%;
+  height: 180px; /* fixed height for equal card size */
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.product-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* ======== Discount Badge ======== */
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #e63946;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ======== Product Details ======== */
+.product-details {
+  flex-grow: 1; /* grow to fill space */
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-description {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.product-description:hover {
+  color: #3512b5;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2a9d8f;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 0.85rem;
+  margin: 4px 0;
+  color: #1d3557;
+}
+
+/* ======== Button ======== */
+.buy-button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  background-color: #264653;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  margin-top: auto; /* push button to bottom */
+}
+
+.buy-button:hover {
+  background-color: #1b3a4b;
+}
+
+/* ======== RESPONSIVE STYLES ======== */
+
+/* Tablets (2 columns) */
+@media (max-width: 992px) {
+  .product-card {
+    flex: 1 1 calc(48% - 20px);
+  }
+}
+
+/* Tablets (2 columns) */
+/* Tablets (2 columns) */
+@media (max-width: 992px) {
+  .product-card {
+    flex: 1 1 calc(45% - 20px); 
+    max-width: 280px;
+    margin: 0 auto;  /* 👈 center each card horizontally */
+  }
+}
+
+
+/* Mobile (1 column + smaller image) */
+@media (max-width: 576px) {
+  .page-container,
+  .card-container {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px; /* reduce gap */
+  }
+
+  .product-card {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 12px;
+    max-width: 320px;  /* smaller max width on mobile */
+    margin: 0 auto;    /* center horizontally */
+  }
+
+  .image-wrapper {
+    height: 140px;     /* smaller image height */
+    padding: 0.6rem;
+  }
+
+  .product-image {
+    max-width: 100px;
+    max-height: 100%;
+  }
+
+  .product-title {
+    font-size: 0.9rem;
+  }
+
+  .product-description {
+    font-size: 0.75rem;
+  }
+
+  .product-price {
+    font-size: 0.95rem;
+  }
+
+  .buy-button {
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+    padding: 7px 12px;
+  }
+
+  .discount-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+  }
+}

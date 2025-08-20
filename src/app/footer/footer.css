@@ -1,0 +1,38 @@
+footer h5 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .form-control {
+  max-width: 250px;
+}
+
+/* Center the footer content text */
+footer {
+  text-align: center;
+ 
+}
+
+/* Center align the lists inside each column */
+footer .nav {
+  justify-content: center;
+}
+
+/* Center the newsletter form contents */
+footer form > div {
+  justify-content: center !important; /* override Bootstrap flex styles */
+}
+
+/* Center the bottom copyright and social icons */
+footer .d-flex.flex-sm-row.justify-content-between {
+  justify-content: center !important; /* center on all screen sizes */
+  gap: 1rem;
+}
+
+footer .list-unstyled.d-flex {
+  justify-content: center !important; /* center social icons */
+}

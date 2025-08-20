@@ -1,0 +1,66 @@
+<div class="container py-5">
+  <div class="row">
+    <!-- Left: Product Image -->
+    <div class="col-md-6">
+      <div class="product-img-container position-relative">
+        <!-- Category Badge -->
+        <span class="category-badge">{{ product.category }}</span>
+
+        <img
+          src="{{ product.image }}"
+          alt="Product Image"
+          class="product-img"
+        />
+      </div>
+    </div>
+
+    <!-- Right: Product Details -->
+    <div class="col-md-6">
+   <!-- Title -->
+      <p class="mb-2 title_product">{{ product.title }}</p>
+
+      <!-- Price -->
+      <div class="mb-2">
+        <span class="price">{{ product.price | currency:'USD':'symbol' }}</span>
+      </div>
+      <!-- Product Description -->
+      <div class="info-box mt-4">
+        <strong>Description</strong>
+        <p class="text-muted" style="line-height: 1.6;">
+          {{ product.description }}
+        </p>
+      </div>
+
+      <!-- Add to Bag (Moved here) -->
+      <div class="d-flex mb-4 mt-3">
+        <button class="btn-add">Add to bag</button>
+        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+      </div>
+
+      <!-- Info Boxes -->
+      <div class="info-box">
+        <div class="info-item">
+          <i class="fas fa-shipping-fast"></i>
+          <div>
+            <strong>Fast Delivery</strong>
+            <p class="mb-0 small text-muted">From 1 - 3 days</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-credit-card"></i>
+          <div>
+            <strong>Easy payment</strong>
+            <p class="mb-0 small text-muted">Many forms</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Support hotline</strong>
+            <p class="mb-0 small text-muted">(+855) 081 999 716</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

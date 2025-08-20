@@ -1,0 +1,19 @@
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+}

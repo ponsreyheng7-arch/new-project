@@ -1,0 +1,134 @@
+.checkout-container {
+  width: 68.4%;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.guest-section,
+.login-section {
+  width: 48%;
+}
+
+.divider {
+  width: 2px;
+  background: #ddd;
+  margin: 0 15px;
+}
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #000;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-guest,
+.btn-login {
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn-guest:hover,
+.btn-login:hover {
+  background: #333;
+}
+
+.forgot-password {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  text-align: right;
+}
+
+
+@media (max-width: 992px) {
+  .checkout-container {
+    width: 84%;
+  }
+
+  .guest-section,
+  .login-section {
+    width: 100%;
+  }
+
+  .checkout-container .d-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .tabs {
+    justify-content: center;
+  }
+
+  .checkout-header {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .checkout-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .form-control {
+    padding: 8px;
+  }
+
+  .btn-guest,
+  .btn-login {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .tab {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .checkout-header {
+    font-size: 1.25rem;
+  }
+}

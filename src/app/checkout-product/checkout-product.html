@@ -1,0 +1,51 @@
+<div class="checkout-container d-flex flex-column">
+    <div class="checkout-header">Proceed to checkout</div>
+    <div class="d-flex justify-content-between align-items-start">
+      <!-- Guest Checkout -->
+      <div class="guest-section ">
+        <h5 >Guest Checkout</h5>
+        <p>
+          You can checkout without creating an account by choosing the "continue as guest" option. You will still be able to track your order.
+        </p>
+        <button class="btn-guest">Continue as guest</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Login -->
+      <div class="login-section">
+        <h5>Already have an account? Login</h5>
+        <div class="tabs">
+          <div class="tab active">LOGIN</div>
+          <div class="tab">REGISTER</div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="mobile">Mobile number</label>
+            <input
+              type="tel"
+              id="mobile"
+              class="form-control"
+              placeholder="Enter phone number"
+              required
+            />
+          </div>
+          <div class="form-group password-input-wrapper">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Enter password"
+              required
+            />
+            <span class="password-toggle" onclick="togglePassword()">
+              
+            </span>
+          </div>
+          <button type="submit" class="btn-login">LOGIN</button>
+        </form>
+        <div class="forgot-password">Forgot your password?</div>
+      </div>
+    </div>
+  </div>
