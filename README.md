@@ -70,3 +70,4 @@ For more information on using the Angular CLI, including detailed command refere
 # new-project
 "# new-project" 
 "# new-project" 
+"# shop_app" 
