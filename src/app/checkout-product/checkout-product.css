@@ -1,134 +1,119 @@
+/* General Checkout Container */
 .checkout-container {
-  width: 68.4%;
-  margin: 30px auto;
+  max-width: 1100px;
+  margin: auto;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.checkout-header {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 25px;
-  text-align: center;
+/* Header */
+.checkout-header h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
 }
 
+.checkout-header p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Guest & Payment Section Cards */
 .guest-section,
-.login-section {
-  width: 48%;
+.payment-section {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
 }
 
-.divider {
-  width: 2px;
-  background: #ddd;
-  margin: 0 15px;
-}
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+.guest-section:hover,
+.payment-section:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.tab {
-  padding: 8px 16px;
-  background: #eee;
-  border-radius: 5px;
-  cursor: pointer;
+/* Form Styles */
+.form-label {
+  font-weight: 600;
+  color: #444;
 }
 
-.tab.active {
-  background: #000;
-  color: #fff;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-control {
-  width: 100%;
+.form-control,
+textarea {
+  border-radius: 8px;
+  border: 1px solid #ddd;
   padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
-.btn-guest,
-.btn-login {
-  padding: 10px 20px;
-  background: black;
-  color: white;
+.form-control:focus,
+textarea:focus {
+  border-color: #198754;
+  box-shadow: 0 0 6px rgba(25, 135, 84, 0.3);
+  outline: none;
+}
+
+/* Payment Section */
+.payment-section h5,
+.guest-section h5 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.credit-card-form {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.form-check-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-success {
+  background-color: #198754;
   border: none;
-  border-radius: 6px;
-  width: 100%;
-  margin-top: 10px;
-  transition: background 0.3s ease;
 }
 
-.btn-guest:hover,
-.btn-login:hover {
-  background: #333;
+.btn-success:hover {
+  background-color: #157347;
+  transform: translateY(-1px);
 }
 
-.forgot-password {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #555;
-  cursor: pointer;
-  text-align: right;
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
 }
 
+.btn-warning:hover {
+  background-color: #e0a800;
+}
 
-@media (max-width: 992px) {
+/* Responsive */
+@media (max-width: 768px) {
   .checkout-container {
-    width: 84%;
-  }
-
-  .guest-section,
-  .login-section {
-    width: 100%;
-  }
-
-  .checkout-container .d-flex {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .divider {
-    display: none;
-  }
-
-  .tabs {
-    justify-content: center;
-  }
-
-  .checkout-header {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .checkout-container {
-    width: 100%;
     padding: 15px;
   }
-
-  .form-control {
-    padding: 8px;
-  }
-
-  .btn-guest,
-  .btn-login {
-    font-size: 0.95rem;
-    padding: 10px;
-  }
-
-  .tab {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  .checkout-header {
-    font-size: 1.25rem;
+  .guest-section,
+  .payment-section {
+    margin-bottom: 20px;
   }
 }

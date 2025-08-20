@@ -1,51 +1,77 @@
-<div class="checkout-container d-flex flex-column">
-    <div class="checkout-header">Proceed to checkout</div>
-    <div class="d-flex justify-content-between align-items-start">
-      <!-- Guest Checkout -->
-      <div class="guest-section ">
-        <h5 >Guest Checkout</h5>
-        <p>
-          You can checkout without creating an account by choosing the "continue as guest" option. You will still be able to track your order.
-        </p>
-        <button class="btn-guest">Continue as guest</button>
-      </div>
+<div class="checkout-container container py-5">
+  <!-- Header -->
+  <div class="checkout-header mb-4 text-center">
+    <h3 class="fw-bold">Proceed to Checkout</h3>
+    <p class="text-muted">Complete your purchase securely</p>
+  </div>
 
-      <div class="divider"></div>
-
-      <!-- Login -->
-      <div class="login-section">
-        <h5>Already have an account? Login</h5>
-        <div class="tabs">
-          <div class="tab active">LOGIN</div>
-          <div class="tab">REGISTER</div>
-        </div>
+  <div class="row">
+    <!-- Guest Checkout -->
+    <div class="col-md-6">
+      <div class="guest-section p-4 border rounded bg-light">
+        <h5 class="mb-3">Guest Checkout</h5>
         <form>
-          <div class="form-group">
-            <label for="mobile">Mobile number</label>
-            <input
-              type="tel"
-              id="mobile"
-              class="form-control"
-              placeholder="Enter phone number"
-              required
-            />
+          <div class="form-group mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
           </div>
-          <div class="form-group password-input-wrapper">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              class="form-control"
-              placeholder="Enter password"
-              required
-            />
-            <span class="password-toggle" onclick="togglePassword()">
-              
-            </span>
+          <div class="form-group mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
           </div>
-          <button type="submit" class="btn-login">LOGIN</button>
+          <div class="form-group mb-3">
+            <label for="address" class="form-label">Shipping Address</label>
+            <textarea id="address" class="form-control" rows="3" placeholder="Enter your address" required></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+          </div>
         </form>
-        <div class="forgot-password">Forgot your password?</div>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="col-md-6">
+      <div class="payment-section p-4 border rounded bg-light">
+        <h5 class="mb-3">Payment Method</h5>
+
+        <!-- Credit Card -->
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="payment" id="credit" checked>
+          <label class="form-check-label fw-bold" for="credit">Credit / Debit Card</label>
+        </div>
+        <div class="credit-card-form border rounded p-3 mb-3">
+          <div class="form-group mb-3">
+            <label for="cardNumber" class="form-label">Card Number</label>
+            <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="expiry" class="form-label">Expiry Date</label>
+              <input type="text" id="expiry" class="form-control" placeholder="MM/YY">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cvv" class="form-label">CVV</label>
+              <input type="text" id="cvv" class="form-control" placeholder="123">
+            </div>
+          </div>
+        </div>
+
+        <!-- PayPal -->
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="payment" id="paypal">
+          <label class="form-check-label fw-bold" for="paypal">PayPal</label>
+        </div>
+
+        <!-- COD -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="radio" name="payment" id="cod">
+          <label class="form-check-label fw-bold" for="cod">Cash on Delivery (COD)</label>
+        </div>
+
+        <button class="btn btn-success w-100">Confirm & Pay</button>
       </div>
     </div>
   </div>
+</div>
